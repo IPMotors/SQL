@@ -115,6 +115,8 @@ CREATE TABLE IF NOT EXISTS `ipmotors_grp4`.`types` (
 
 CREATE TABLE IF NOT EXISTS `ipmotors_grp4`.`utilisateurs` (
   `id` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
   `login` varchar(35) NOT NULL,
   `mdp` varchar(32) NOT NULL,
   `mail` varchar(255) NOT NULL,
