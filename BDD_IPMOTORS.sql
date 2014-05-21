@@ -30,7 +30,7 @@ USE `ipmotors_grp4`;
 
 DROP TABLE IF EXISTS `clients`;
 CREATE TABLE IF NOT EXISTS `clients` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
@@ -53,13 +53,13 @@ TRUNCATE TABLE `clients`;
 -- Contenu de la table `clients`
 --
 
-INSERT INTO `clients` (`id`, `nom`, `prenom`, `adresse`, `cp`, `ville`, `telephone`, `dateNaissance`, `mail`, `idVehicule`) VALUES
-(1, 'Da Silva', 'Gil', '10 av. maur.Utrillo', '95100', 'Argenteuil', '0699723335', '1991-10-05', 'gil@truk.com', 8),
-(2, 'Diradourian', 'Lucille', '50 rue de quelque part', '27000', 'ville du 27', '0680756824', NULL, 'l.diradourian@ip-formation.net', 5),
-(3, 'Andreo', 'Mickael', '123 ave du bordel', '77950', 'loinloin', '0198552454', NULL, 'mika@autretruk.net', 15),
-(4, 'Bey', 'Sofiene', '150 boulevard des poufs', '92120', 'Boulogne', '0638515876', NULL, 'sofiene@machin.com', 23),
-(5, 'Fauchoux', 'Simon', '26 place des nuls', '93620', 'Aulnay', '0954354896', NULL, 'simon@truk.fr', 14),
-(6, 'Maurin', 'Antony', '140 avenue du fou', '91120', 'Palaiseau', '0785456030', NULL, 'antony@autremachin.de', 1);
+INSERT INTO `clients` (`nom`, `prenom`, `adresse`, `cp`, `ville`, `telephone`, `dateNaissance`, `mail`, `idVehicule`) VALUES
+('Da Silva', 'Gil', '10 av. maur.Utrillo', '95100', 'Argenteuil', '0699723335', '1991-10-05', 'gil@truk.com', 8),
+('Diradourian', 'Lucille', '50 rue de quelque part', '27000', 'ville du 27', '0680756824', NULL, 'l.diradourian@ip-formation.net', 5),
+('Andreo', 'Mickael', '123 ave du bordel', '77950', 'loinloin', '0198552454', NULL, 'mika@autretruk.net', 15),
+('Bey', 'Sofiene', '150 boulevard des poufs', '92120', 'Boulogne', '0638515876', NULL, 'sofiene@machin.com', 23),
+('Fauchoux', 'Simon', '26 place des nuls', '93620', 'Aulnay', '0954354896', NULL, 'simon@truk.fr', 14),
+('Maurin', 'Antony', '140 avenue du fou', '91120', 'Palaiseau', '0785456030', NULL, 'antony@autremachin.de', 1);
 
 -- --------------------------------------------------------
 
@@ -95,7 +95,7 @@ INSERT INTO `groupes` (`id`, `groupe`) VALUES
 
 DROP TABLE IF EXISTS `marques`;
 CREATE TABLE IF NOT EXISTS `marques` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `marque` varchar(175) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -109,20 +109,20 @@ TRUNCATE TABLE `marques`;
 -- Contenu de la table `marques`
 --
 
-INSERT INTO `marques` (`id`, `marque`) VALUES
-(1, 'Renault'),
-(2, 'Peugeot'),
-(3, 'Citroen'),
-(4, 'Volkswagen'),
-(5, 'Ford'),
-(6, 'Dacia'),
-(7, 'BMW'),
-(8, 'Opel'),
-(9, 'Audi'),
-(10, 'Mercedes'),
-(11, 'Nissan'),
-(12, 'Toyota'),
-(13, 'Fiat');
+INSERT INTO `marques` (`marque`) VALUES
+('Renault'),
+('Peugeot'),
+('Citroen'),
+('Volkswagen'),
+('Ford'),
+('Dacia'),
+('BMW'),
+('Opel'),
+('Audi'),
+('Mercedes'),
+('Nissan'),
+('Toyota'),
+('Fiat');
 
 -- --------------------------------------------------------
 
@@ -132,7 +132,7 @@ INSERT INTO `marques` (`id`, `marque`) VALUES
 
 DROP TABLE IF EXISTS `pointfort`;
 CREATE TABLE IF NOT EXISTS `pointfort` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `designation` varchar(175) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -146,12 +146,12 @@ TRUNCATE TABLE `pointfort`;
 -- Contenu de la table `pointfort`
 --
 
-INSERT INTO `pointfort` (`id`, `designation`) VALUES
-(1, 'Sécurité'),
-(2, 'Confort'),
-(3, 'Vitesse'),
-(4, 'Acceleration'),
-(5, 'Comportement');
+INSERT INTO `pointfort` (`designation`) VALUES
+('Sécurité'),
+('Confort'),
+('Vitesse'),
+('Acceleration'),
+('Comportement');
 
 -- --------------------------------------------------------
 
@@ -182,7 +182,7 @@ TRUNCATE TABLE `posseder`;
 
 DROP TABLE IF EXISTS `types`;
 CREATE TABLE IF NOT EXISTS `types` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -196,16 +196,16 @@ TRUNCATE TABLE `types`;
 -- Contenu de la table `types`
 --
 
-INSERT INTO `types` (`id`, `type`) VALUES
-(1, 'Utilitaires'),
-(2, 'Cabriolets'),
-(3, 'Coupés'),
-(4, 'Monospaces'),
-(5, 'Breaks'),
-(6, 'Grandes berlines'),
-(7, 'Moyennes berlines'),
-(8, 'Citadines'),
-(9, '4x4');
+INSERT INTO `types` (`type`) VALUES
+('Utilitaires'),
+('Cabriolets'),
+('Coupés'),
+('Monospaces'),
+('Breaks'),
+('Grandes berlines'),
+('Moyennes berlines'),
+('Citadines'),
+('4x4');
 
 -- --------------------------------------------------------
 
@@ -215,7 +215,7 @@ INSERT INTO `types` (`id`, `type`) VALUES
 
 DROP TABLE IF EXISTS `utilisateurs`;
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `login` varchar(35) NOT NULL,
@@ -235,9 +235,9 @@ TRUNCATE TABLE `utilisateurs`;
 -- Contenu de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `login`, `mdp`, `mail`, `idGroupe`) VALUES
-(1, 'nom admin', 'son prénom', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@ipmotors.com', 'A'),
-(2, 'user', 'user prenom', 'user1', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@truk.com', 'U');
+INSERT INTO `utilisateurs` (`nom`, `prenom`, `login`, `mdp`, `mail`, `idGroupe`) VALUES
+('nom admin', 'son prénom', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@ipmotors.com', 'A'),
+('user', 'user prenom', 'user1', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@truk.com', 'U');
 
 -- --------------------------------------------------------
 
@@ -247,7 +247,7 @@ INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `login`, `mdp`, `mail`, `idGr
 
 DROP TABLE IF EXISTS `vehicules`;
 CREATE TABLE IF NOT EXISTS `vehicules` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idtype` int(11) NOT NULL,
   `idmarque` int(11) NOT NULL,
   `modele` varchar(150) NOT NULL,
@@ -265,34 +265,34 @@ TRUNCATE TABLE `vehicules`;
 -- Contenu de la table `vehicules`
 --
 
-INSERT INTO `vehicules` (`id`, `idtype`, `idmarque`, `modele`) VALUES
-(1, 1, 1, 'Kangoo'),
-(2, 1, 13, 'Ducato'),
-(3, 2, 2, '308'),
-(4, 2, 2, '207'),
-(5, 2, 4, 'Eos'),
-(6, 3, 2, 'Rcz'),
-(7, 3, 4, 'Scirocco'),
-(8, 3, 9, 'A5'),
-(9, 3, 1, 'Laguna'),
-(10, 9, 6, 'Duster'),
-(11, 9, 11, 'Qashqai'),
-(12, 4, 1, 'Scenic'),
-(13, 4, 3, 'C3'),
-(14, 4, 3, 'C4'),
-(15, 5, 2, '3008'),
-(16, 5, 1, 'Megane 3'),
-(17, 6, 8, 'Insignia'),
-(18, 6, 2, '508'),
-(19, 6, 3, 'C5'),
-(20, 7, 7, 'Serie 1'),
-(21, 7, 9, 'A3'),
-(22, 7, 5, 'Focus'),
-(23, 8, 1, 'Clio 3'),
-(24, 8, 6, 'Sandero'),
-(25, 8, 2, '207'),
-(26, 8, 3, 'C3'),
-(27, 8, 4, 'Polo 5');
+INSERT INTO `vehicules` (`idtype`, `idmarque`, `modele`) VALUES
+(1, 1, 'Kangoo'),
+(1, 13, 'Ducato'),
+(2, 2, '308'),
+(2, 2, '207'),
+(2, 4, 'Eos'),
+(3, 2, 'Rcz'),
+(3, 4, 'Scirocco'),
+(3, 9, 'A5'),
+(3, 1, 'Laguna'),
+(9, 6, 'Duster'),
+(9, 11, 'Qashqai'),
+(4, 1, 'Scenic'),
+(4, 3, 'C3'),
+(4, 3, 'C4'),
+(5, 2, '3008'),
+(5, 1, 'Megane 3'),
+(6, 8, 'Insignia'),
+(6, 2, '508'),
+(6, 3, 'C5'),
+(7, 7, 'Serie 1'),
+(7, 9, 'A3'),
+(7, 5, 'Focus'),
+(8, 1, 'Clio 3'),
+(8, 6, 'Sandero'),
+(8, 2, '207'),
+(8, 3, 'C3'),
+(8, 4, 'Polo 5');
 
 --
 -- Contraintes pour les tables exportées
