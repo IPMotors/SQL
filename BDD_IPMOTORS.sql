@@ -251,10 +251,10 @@ VALUES
 ('4', 'Acceleration'), 
 ('5', 'Comportement');
 
-INSERT INTO `ipmotors_grp4`.`utilisateurs` (`id`, `login`, `mdp`, `mail`, `idGroupe`) 
+INSERT INTO `ipmotors_grp4`.`utilisateurs` (`id`, `nom`, `prenom`, `login`, `mdp`, `mail`, `idGroupe`) 
 VALUES 
-('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@ipmotors.com', 'A'), 
-('2', 'user1', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@truk.com', 'U');
+('1', 'nom admin', 'prénom', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@ipmotors.com', 'A'), 
+('2', 'user', 'Abcde', 'user1', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@truk.com', 'U');
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
