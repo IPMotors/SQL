@@ -89,9 +89,9 @@ CREATE TABLE IF NOT EXISTS `ipmotors_grp4`.`pointfort` (
 CREATE TABLE IF NOT EXISTS `ipmotors_grp4`.`posseder` (
   `idVehicule` int(11) NOT NULL,
   `idPointFort` int(11) NOT NULL,
-  `ordre` int(11) NOT NULL,
   `futur` tinyint(1) NOT NULL,
-  PRIMARY KEY (`idVehicule`,`idPointFort`),
+  `ordre` int(11) NOT NULL,
+  PRIMARY KEY (`idVehicule`,`idPointFort`, futur),
   KEY `idPointFort` (`idPointFort`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
